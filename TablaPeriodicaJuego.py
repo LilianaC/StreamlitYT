@@ -20,7 +20,7 @@ for i in resultado.values:
     buttons.append(st.button(str(i)))
 
 
-if st.button(df.iloc[num]['Elemento']) == df.iloc[num]['Elemento']:
+if st.button(df.iloc[num]['Elemento']):
     print("¡Correcto!")
 else:
     print("¡Incorrecto!")
