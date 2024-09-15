@@ -14,7 +14,8 @@ def juego():
     resultado = df['Elemento'].loc[df['Elemento'].str.startswith(letra)]
     lista = resultado.values.tolist()
     st.write("¿Cuál es el nombre del elemento químico con el símbolo", df.iloc[num]['Symbol'], "?")
-    return(lista)
+    return [num,lista]
+num,lista = juego()
 
 elemento = st.radio("Selecciona el elemento",juego())
 
