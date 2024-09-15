@@ -20,7 +20,7 @@ for i in resultado.values:
     buttons.append(st.button(i,key=i))
 
 
-if st.button(df.iloc[num]['Elemento']):
+if st.button(key=df.iloc[num]['Elemento']):
     st.write("¡Correcto!")
     st.balloons()
     
