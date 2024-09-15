@@ -12,14 +12,19 @@ df = pd.read_csv(url)
 num = random.randint(0, len(df))
 letra = df.iloc[num]['Elemento'][0]
 resultado = df['Elemento'].loc[df['Elemento'].str.startswith(letra)]
+lista = resultado.values.tolist()
+nums = df['AtomicNumber'].loc[df['Elemento'].str.startswith(letra)]
+nums = nums.values.tolist()
+diccio = dict(map(lambda i,j : (i,j) , nums,lista))
+
 st.write("¿Cuál es el nombre del elemento químico con el símbolo", df.iloc[num]['Symbol'], "?")
 
 buttons = []
-for i in resultado.values:
-    buttons.append(st.button(i))
+for x,y in diccio.items():
+    buttons.append(st.button(y),key=x)
 
 
-if st.button(df.iloc[num]['Elemento']):
+if st.button(df.iloc[num]['Elemento'],key=df.iloc[num]['AtomicNumber']):
     st.balloons()
 
 
