@@ -10,18 +10,14 @@ df = pd.read_csv(url)
 num = random.randint(0, len(df))
 letra = df.iloc[num]['Elemento'][0]
 resultado = df['Elemento'].loc[df['Elemento'].str.startswith(letra)]
-lista = resultado.values.tolist()
 
 st.write("¿Cuál es el nombre del elemento químico con el símbolo", df.iloc[num]['Symbol'], "?")
 
-c=0
 buttons = []
 for i in resultado.values:
-    
-    buttons.append(st.button(i,key=c))
-    c=c+1
+    buttons.append(st.button(i,key=i))
 
-st.write(df.iloc[num]['Elemento'])
+
 if st.button(df.iloc[num]['Elemento']):
     st.write("¡Correcto!")
     st.balloons()
@@ -31,8 +27,3 @@ else:
     #print("La respuesta correcta era:", df.iloc[num]['Elemento'])
 
 
-
-
-for i, button in enumerate(buttons):
-    if button:
-        st.write(f"{i} button was clicked")
