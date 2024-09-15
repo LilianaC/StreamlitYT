@@ -19,12 +19,9 @@ diccio = dict(map(lambda i,j : (i,j) , nums,lista))
 
 st.write("¿Cuál es el nombre del elemento químico con el símbolo", df.iloc[num]['Symbol'], "?")
 
-buttons = []
-for x,y in diccio.items():
-    buttons.append(st.button(y,key=x))
+elemento = st.radio("Selecciona el elemento",lista)
 
-
-if st.button(df.iloc[num]['Elemento'],key=df.iloc[num]['AtomicNumber']):
+if elemento ==  df.iloc[num]['Elemento']:
     st.balloons()
 
 
