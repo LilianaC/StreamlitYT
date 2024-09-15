@@ -14,10 +14,12 @@ lista = resultado.values.tolist()
 
 st.write("¿Cuál es el nombre del elemento químico con el símbolo", df.iloc[num]['Symbol'], "?")
 
-
+c=0
 buttons = []
 for i in resultado.values:
-    buttons.append(st.button(i))
+    
+    buttons.append(st.button(i,key=c))
+    c=c+1
 
 
 if st.button(df.iloc[num]['Elemento']):
