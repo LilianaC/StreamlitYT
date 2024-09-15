@@ -1,3 +1,6 @@
+#https://discuss.streamlit.io/t/dynamic-buttons/7723/2
+
+
 import streamlit as st
 import pandas as pd
 import random
@@ -9,11 +12,14 @@ letra = df.iloc[num]['Elemento'][0]
 resultado = df['Elemento'].loc[df['Elemento'].str.startswith(letra)]
 lista = resultado.values.tolist()
 
-
 buttons = []
-
-for i in range(len(lista)):
+for i in resultado.values:
     buttons.append(st.button(lista[i]))
+
+
+
+
+
 
 for i, button in enumerate(buttons):
     if button:
