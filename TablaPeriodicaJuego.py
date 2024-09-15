@@ -21,10 +21,12 @@ for i in resultado.values:
 
 
 if st.button(df.iloc[num]['Elemento']):
-    print("¡Correcto!")
+    st.write("¡Correcto!")
+    st.balloons()
+    
 else:
-    print("¡Incorrecto!")
-    print("La respuesta correcta era:", df.iloc[num]['Elemento'])
+    st.write("¡Incorrecto!")
+    #print("La respuesta correcta era:", df.iloc[num]['Elemento'])
 
 
 
