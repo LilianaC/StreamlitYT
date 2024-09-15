@@ -18,11 +18,9 @@ buttons = []
 for i in resultado.values:
     buttons.append(st.button(i))
 
-for i, button in enumerate(buttons):
-    if button(df.iloc[num]['Elemento']):
-        st.write(f"{i} button was clicked")
 
-
+if st.button(df.iloc[num]['Elemento']):
+    st.balloons()
 
 
 
