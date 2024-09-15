@@ -27,11 +27,12 @@ st.write("¿Cuál es el nombre del elemento químico con el símbolo", df.iloc[n
 elemento = st.radio("Selecciona el elemento",lista)
 
 if elemento ==  df.iloc[num]['Elemento']:
-    st.session_state.puntos = st.session_state.puntos + 1
+    st.session_state.puntos += 1
     st.write("Puntos",st.session_state.puntos)
+    
 else:
     st.write("Respuesta incorrecta")
-    st.session_state.puntos = st.session_state.puntos - 1
+    st.session_state.puntos -= 1
     st.write("Puntos",st.session_state.puntos)
 
 
