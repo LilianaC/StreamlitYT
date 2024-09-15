@@ -20,6 +20,11 @@ for i in resultado.values:
     buttons.append(st.button(str(i)))
 
 
+if st.button(str(df.iloc[num]['Elemento'])) == df.iloc[num]['Elemento']:
+    print("¡Correcto!")
+else:
+    print("¡Incorrecto!")
+    print("La respuesta correcta era:", df.iloc[num]['Elemento'])
 
 
 
