@@ -15,10 +15,10 @@ st.write("¿Cuál es el nombre del elemento químico con el símbolo", df.iloc[n
 
 buttons = []
 for i in resultado.values:
-    buttons.append(st.button(i))
+    buttons.append(st.button(i),key=i)
 
 
-if st.button(df.iloc[num]['Elemento']):
+if st.button(df.iloc[num]['Elemento'],key=df.iloc[num]['Elemento']):
     st.write("¡Correcto!")
     st.balloons()
     
