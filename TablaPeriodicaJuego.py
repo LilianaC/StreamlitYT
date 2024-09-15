@@ -10,6 +10,8 @@ df = pd.read_csv(url)
 num = random.randint(0, len(df))
 letra = df.iloc[num]['Elemento'][0]
 resultado = df['Elemento'].loc[df['Elemento'].str.startswith(letra)]
+lista [0:0] = ['🤔']
+
 lista = resultado.values.tolist()
 
 st.session_state.puntos = 0
@@ -20,7 +22,7 @@ def reset():
 st.button('🔄 Resetear',on_click=reset)
 
 st.write("¿Cuál es el nombre del elemento químico con el símbolo", df.iloc[num]['Symbol'], "?")
-elemento = st.radio("Selecciona el elemento",lista,disabled=True)
+elemento = st.radio("Selecciona el elemento")
 
 if elemento ==  df.iloc[num]['Elemento']:
     st.write("¡Excelente!")
