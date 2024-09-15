@@ -14,7 +14,7 @@ lista = resultado.values.tolist()
 
 buttons = []
 for i in resultado.values:
-    buttons.append(st.button(lista[i]))
+    buttons.append(st.button(str(i)))
 
 
 
