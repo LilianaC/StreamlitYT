@@ -18,7 +18,7 @@ def juego():
 num,lista = juego()
 
 st.write("¿Cuál es el nombre del elemento químico con el símbolo", df.iloc[num]['Symbol'], "?")
-elemento = st.radio("Selecciona el elemento",juego())
+elemento = st.radio("Selecciona el elemento",lista)
 
 if elemento ==  df.iloc[num]['Elemento']:
     st.balloons()
