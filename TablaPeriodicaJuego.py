@@ -21,18 +21,18 @@ with st.form("La Tabla"):
     if submitted:
         st.write("¿Cuál es el nombre del elemento químico con el símbolo", df.iloc[num]['Symbol'], "?")
 
-        buttons = []
-        for i in resultado.values:
-            buttons.append(st.button(i,key=i))
+buttons = []
+for i in resultado.values:
+    buttons.append(st.button(i,key=i))
 
 
-        if st.button(elemento,key=elemento):
-            st.write("¡Correcto!")
-            st.balloons()
+if st.button(elemento,key=elemento):
+    st.write("¡Correcto!")
+    st.balloons()
             
-        else:
-            st.write("¡Incorrecto!")
-            #print("La respuesta correcta era:", df.iloc[num]['Elemento'])
+else:
+    st.write("¡Incorrecto!")
+    #print("La respuesta correcta era:", df.iloc[num]['Elemento'])
 
 
 
