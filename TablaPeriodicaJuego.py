@@ -10,9 +10,9 @@ df = pd.read_csv(url)
 num = random.randint(0, len(df))
 letra = df.iloc[num]['Elemento'][0]
 resultado = df['Elemento'].loc[df['Elemento'].str.startswith(letra)]
-lista [0:0] = ['🤔']
 
 lista = resultado.values.tolist()
+lista [0:0] = ['🤔']
 
 st.session_state.puntos = 0
 
