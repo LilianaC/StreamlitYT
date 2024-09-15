@@ -12,6 +12,9 @@ letra = df.iloc[num]['Elemento'][0]
 resultado = df['Elemento'].loc[df['Elemento'].str.startswith(letra)]
 lista = resultado.values.tolist()
 
+st.write("¿Cuál es el nombre del elemento químico con el símbolo", df.iloc[num]['Symbol'], "?")
+
+
 buttons = []
 for i in resultado.values:
     buttons.append(st.button(str(i)))
