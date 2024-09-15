@@ -9,31 +9,18 @@ url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTyeAUixFkE9fiDDCx_Zifmng
 df = pd.read_csv(url)
 
 
-with st.form("La Tabla"):
-    st.write("Inside")
-    num = random.randint(0, len(df))
-    letra = df.iloc[num]['Elemento'][0]
-    resultado = df['Elemento'].loc[df['Elemento'].str.startswith(letra)]
-    elemento = df.iloc[num]['Elemento']
-
-    # Every form must have a submit button.
-    submitted = st.form_submit_button("Presiona para jugar")
-    if submitted:
-        st.write("¿Cuál es el nombre del elemento químico con el símbolo", df.iloc[num]['Symbol'], "?")
+num = random.randint(0, len(df))
+letra = df.iloc[num]['Elemento'][0]
+resultado = df['Elemento'].loc[df['Elemento'].str.startswith(letra)]
+st.write("¿Cuál es el nombre del elemento químico con el símbolo", df.iloc[num]['Symbol'], "?")
 
 buttons = []
 for i in resultado.values:
-    buttons.append(st.button(i,key=i))
+    buttons.append(st.button(i))
 
-
-if st.button(elemento,key=elemento):
-    st.write("¡Correcto!")
-    st.balloons()
-            
-else:
-    st.write("¡Incorrecto!")
-    #print("La respuesta correcta era:", df.iloc[num]['Elemento'])
-
+for i, button in enumerate(buttons):
+    if button:
+        st.write(f"{i} button was clicked")
 
 
 
