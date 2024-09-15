@@ -8,7 +8,10 @@ import random
 url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTyeAUixFkE9fiDDCx_Zifmngrjf1_9jjr1Tb7n1twPWiw0tfqd0atb1juO9ncpD5wDrjbBgcHqmfOy/pub?gid=435584327&single=true&output=csv'
 df = pd.read_csv(url)
 
-puntos = 0
+def reset():
+    st.session_state.puntos = 0
+    
+st.button('🔄 Resetear',on_click=reset)
 
 def juego():
     num = random.randint(0, len(df))
@@ -23,12 +26,12 @@ st.write("¿Cuál es el nombre del elemento químico con el símbolo", df.iloc[n
 elemento = st.radio("Selecciona el elemento",lista)
 
 if elemento ==  df.iloc[num]['Elemento']:
-    puntos = puntos + 1
-    st.write("Puntos",puntos)
+    st.session_state.puntos = st.session_state.puntos + 1
+    st.write("Puntos",st.session_state.puntos)
 else:
     st.write("Respuesta incorrecta")
-    puntos = puntos - 1
-    st.write("Puntos",puntos)
+    st.session_state.puntos = st.session_state.puntos - 1
+    st.write("Puntos",st.session_state.puntos)
 
 
 
