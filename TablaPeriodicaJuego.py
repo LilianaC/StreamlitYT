@@ -14,7 +14,7 @@ if "juego_state" not in st.session_state:
     st.session_state.juego_state = False
 
 
-if lista or num not in st.session_state:
+if "lista" or "num" not in st.session_state:
     num = random.randint(0, len(df))
     letra = df.iloc[num]['Elemento'][0]
     resultado = df['Elemento'].loc[df['Elemento'].str.startswith(letra)]
