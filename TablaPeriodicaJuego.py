@@ -32,7 +32,7 @@ def revision():
     
     else:
         st.write("Respuesta incorrecta")
-        st.session_state.puntos -= 1
+        puntos -= 1
         st.write("Puntos",st.session_state.puntos)
         juego()
     
