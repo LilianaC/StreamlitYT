@@ -24,11 +24,13 @@ def revision():
         st.write("¡Excelente!")
         st.session_state.puntos += 1
         st.write("Puntos",st.session_state.puntos)
+        juego()
     
     else:
         st.write("Respuesta incorrecta")
         st.session_state.puntos -= 1
         st.write("Puntos",st.session_state.puntos)
+        juego()
     
 
 num,lista = juego()
