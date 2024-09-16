@@ -24,13 +24,17 @@ juego = st.button('🔄 Juego nuevo')
 if "juego_state" not in st.session_state:
     st.session_state.juego_state = False
 
+
 if juego or st.session_state.juego_state:
     st.session_state.juego_state = True
     puntos = 0
     num,lista = jugar()
+    st.write(num)
     st.write("¿Cuál es el nombre del elemento químico con el símbolo", df.iloc[num]['Symbol'], "?")
+    st.write(num)
     st.write(df.iloc[num]['Elemento'])
     elemento = st.radio("Selecciona el elemento",lista)
+    st.write(num)
     st.write(elemento)
 
     
