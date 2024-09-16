@@ -14,6 +14,7 @@ def juego():
     resultado = df['Elemento'].loc[df['Elemento'].str.startswith(letra)]
     lista = resultado.values.tolist()
     lista.insert(0, "🤔")
+    st.write(lista)
     return [num,lista]
 
 def reset():
