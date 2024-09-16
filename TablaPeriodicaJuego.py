@@ -31,7 +31,7 @@ def revision():
     
 
 num,lista = juego()
-lista [0:0] = ['🤔']
+lista [0] = ['🤔']
 st.write("¿Cuál es el nombre del elemento químico con el símbolo", df.iloc[num]['Symbol'], "?")
 st.write(df.iloc[num]['Elemento'])
 elemento = st.radio("Selecciona el elemento",lista,on_change=revision)
