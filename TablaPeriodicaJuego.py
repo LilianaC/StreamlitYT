@@ -17,16 +17,6 @@ def jugar():
     st.write(lista)
     return [num,lista]
 
-def revision():
-    if elemento ==  df.iloc[num]['Elemento']:
-        st.write("¡Excelente!")
-        puntos += 1
-        st.write("Puntos",puntos)
-    
-    else:
-        st.write("Respuesta incorrecta")
-        puntos -= 1
-        st.write("Puntos",puntos)
 
 
 juego = st.button('🔄 Juego nuevo')
@@ -41,7 +31,17 @@ if juego or st.session_state.juego_state:
     st.write("¿Cuál es el nombre del elemento químico con el símbolo", df.iloc[num]['Symbol'], "?")
     st.write(df.iloc[num]['Elemento'])
     elemento = st.radio("Selecciona el elemento",lista)
-    revision()
+    
+    if elemento ==  df.iloc[num]['Elemento']:
+        st.write("¡Excelente!")
+        puntos += 1
+        st.write("Puntos",puntos)
+    
+    else:
+        st.write("Respuesta incorrecta")
+        puntos -= 1
+        st.write("Puntos",puntos)
+    
     
 
 
