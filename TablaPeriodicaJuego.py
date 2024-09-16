@@ -26,6 +26,7 @@ st.button('🔄 Resetear',on_click=reset)
 
 st.write("¿Cuál es el nombre del elemento químico con el símbolo", df.iloc[num]['Symbol'], "?")
 elemento = st.radio("Selecciona el elemento",lista)
+st.session_state.puntos = 0
 
 if elemento ==  df.iloc[num]['Elemento']:
     st.write("¡Excelente!")
