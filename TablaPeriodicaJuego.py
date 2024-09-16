@@ -13,6 +13,7 @@ def juego():
     letra = df.iloc[num]['Elemento'][0]
     resultado = df['Elemento'].loc[df['Elemento'].str.startswith(letra)]
     lista = resultado.values.tolist()
+    lista.insert(0, "🤔")
     return [num,lista]
 
 def reset():
@@ -31,7 +32,7 @@ def revision():
     
 
 num,lista = juego()
-lista [0] = ['🤔']
+
 st.write("¿Cuál es el nombre del elemento químico con el símbolo", df.iloc[num]['Symbol'], "?")
 st.write(df.iloc[num]['Elemento'])
 elemento = st.radio("Selecciona el elemento",lista,on_change=revision)
