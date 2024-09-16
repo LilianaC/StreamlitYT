@@ -31,6 +31,8 @@ if juego or st.session_state.juego_state:
     st.write("¿Cuál es el nombre del elemento químico con el símbolo", df.iloc[num]['Symbol'], "?")
     st.write(df.iloc[num]['Elemento'])
     elemento = st.radio("Selecciona el elemento",lista)
+    st.write(elemento)
+
     
     if elemento ==  df.iloc[num]['Elemento']:
         st.write("¡Excelente!")
