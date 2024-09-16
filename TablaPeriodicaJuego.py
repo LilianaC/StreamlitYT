@@ -7,22 +7,21 @@ import random
 url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTyeAUixFkE9fiDDCx_Zifmngrjf1_9jjr1Tb7n1twPWiw0tfqd0atb1juO9ncpD5wDrjbBgcHqmfOy/pub?gid=435584327&single=true&output=csv'
 df = pd.read_csv(url)
 
-def jugar():
-    
-    num = random.randint(0, len(df))
-    letra = df.iloc[num]['Elemento'][0]
-    resultado = df['Elemento'].loc[df['Elemento'].str.startswith(letra)]
-    lista = resultado.values.tolist()
-    lista.insert(0, "🤔")
-    st.write(lista)
-    return [num,lista]
-
-
 
 juego = st.button('🔄 Juego nuevo')
 
 if "juego_state" not in st.session_state:
     st.session_state.juego_state = False
+
+
+if lista or num not in st.session_state:
+    num = random.randint(0, len(df))
+    letra = df.iloc[num]['Elemento'][0]
+    resultado = df['Elemento'].loc[df['Elemento'].str.startswith(letra)]
+    lista = resultado.values.tolist()
+    lista.insert(0, "🤔")
+    st.session_state.lista = lista
+    st.session_state.num = num
 
 
 if juego or st.session_state.juego_state:
