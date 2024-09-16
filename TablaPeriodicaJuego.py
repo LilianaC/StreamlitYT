@@ -31,7 +31,7 @@ def revision():
 
 juego = st.button('🔄 Juego nuevo')
 
-if "juego_state" not in st.sesstion_state:
+if "juego_state" not in st.session_state:
     st.session_state.juego_state = False
 
 if juego or st.session_state.juego_state:
