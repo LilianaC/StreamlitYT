@@ -9,6 +9,7 @@ url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTyeAUixFkE9fiDDCx_Zifmng
 df = pd.read_csv(url)
 
 st.session_state.puntos = 0
+puntos = 0
 
 def juego():
     
