@@ -20,12 +20,6 @@ lista [0:0] = ['🤔']
 
 def reset():
     st.session_state.puntos = 0
-    
-st.button('🔄 Resetear',on_click=reset)
-
-st.write("¿Cuál es el nombre del elemento químico con el símbolo", df.iloc[num]['Symbol'], "?")
-elemento = st.radio("Selecciona el elemento",lista,on_change=revision)
-st.session_state.puntos = 0
 
 def revision():
     if elemento ==  df.iloc[num]['Elemento']:
@@ -37,6 +31,14 @@ def revision():
         st.write("Respuesta incorrecta")
         st.session_state.puntos -= 1
         st.write("Puntos",st.session_state.puntos)
+    
+st.button('🔄 Resetear',on_click=reset)
+
+st.write("¿Cuál es el nombre del elemento químico con el símbolo", df.iloc[num]['Symbol'], "?")
+elemento = st.radio("Selecciona el elemento",lista,on_change=revision)
+st.session_state.puntos = 0
+
+
 
 
 
