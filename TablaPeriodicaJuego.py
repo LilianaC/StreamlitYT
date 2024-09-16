@@ -40,7 +40,7 @@ num,lista = juego()
 
 st.write("¿Cuál es el nombre del elemento químico con el símbolo", df.iloc[num]['Symbol'], "?")
 st.write(df.iloc[num]['Elemento'])
-elemento = st.radio("Selecciona el elemento",lista)
+elemento = st.checkbox("Selecciona el elemento",lista)
 revision()
 st.write(elemento)
 st.session_state.puntos = 0
