@@ -33,7 +33,7 @@ if juego or st.session_state.juego_state:
     lista = pistas.values.tolist()
     
     st.write("¿Cuál es el nombre del elemento químico con el símbolo ",symbol, "?")
-    respuesta = st.radio("Selecciona el elemento",lista)
+    respuesta = st.radio("Selecciona el elemento",lista,index=None)
     st.write(respuesta)
     st.write(lista)
     
