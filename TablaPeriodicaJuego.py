@@ -37,6 +37,7 @@ if juego or st.session_state.juego_state:
         st.write("Respuesta incorrecta")
         st.session_state.puntos -= 1
         st.write("Puntos",st.session_state.puntos)
+        st.write(respuesta)
 
     
 
