@@ -13,9 +13,9 @@ if "num" not in st.session_state:
 if "puntos" not in st.session_state:
     puntos = 0
 
-elemento = df.iloc[num]['Elemento']
-symbol = df.iloc[num]['Symbol']
-letra = df.iloc[num]['Elemento'][0]
+elemento = df.iloc[st.session_state.num]['Elemento']
+symbol = df.iloc[st.session_state.num]['Symbol']
+letra = df.iloc[st.session_state.num]['Elemento'][0]
 pistas = df['Elemento'].loc[df['Elemento'].str.startswith(letra)]
 lista = pistas.values.tolist()
 lista.insert(0, "🤔")
@@ -25,12 +25,12 @@ respuesta = st.radio("Selecciona el elemento",lista)
 
 if respuesta ==  elemento:
     st.write("¡Excelente!")
-    puntos += 1
-    st.write("Puntos",puntos)
+    st.session_state.puntos += 1
+    st.write("Puntos",st.session_state.puntos)
 else:
     st.write("Respuesta incorrecta")
-    puntos -= 1
-    st.write("Puntos",puntos)
+    st.session_state.puntos -= 1
+    st.write("Puntos",st.session_state.puntos)
     
     
 
