@@ -24,6 +24,7 @@ if juego or st.session_state.juego_state:
     
     num = random.randint(0, len(df))
     elemento = df.iloc[num]['Elemento']
+    st.write(type(elemento))
     symbol = df.iloc[num]['Symbol']
     letra = df.iloc[num]['Elemento'][0]
     pistas = df['Elemento'].loc[df['Elemento'].str.startswith(letra)]
