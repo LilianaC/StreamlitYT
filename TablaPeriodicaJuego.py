@@ -8,7 +8,7 @@ url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTyeAUixFkE9fiDDCx_Zifmng
 df = pd.read_csv(url)
 
 if "num" not in st.session_state:
-    num = random.randint(0, len(df))
+    st.session_state.num = random.randint(0, len(df))
 
 if "puntos" not in st.session_state:
     st.session_state.puntos = 0
