@@ -16,10 +16,12 @@ if "puntos" not in st.session_state:
 if "juego_state" not in st.session_state:
     st.session_state.juego_state = False
 
-num = random.randint(0, len(df))
+
 
 if juego or st.session_state.juego_state:
+    
     st.session_state.juego_state = True
+    num = random.randint(0, len(df))
     elemento = df.iloc[num]['Elemento']
     symbol = df.iloc[num]['Symbol']
     letra = df.iloc[num]['Elemento'][0]
