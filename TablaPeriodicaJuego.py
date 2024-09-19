@@ -29,7 +29,7 @@ if juego or st.session_state.juego_state:
     letra = df.iloc[num]['Elemento'][0]
     pistas = df['Elemento'].loc[df['Elemento'].str.startswith(letra)]
     
-    #lista.insert(0, "🤔")
+    lista.insert(0, "🤔")
     lista = pistas.values.tolist()
     
     st.write("¿Cuál es el nombre del elemento químico con el símbolo ",symbol, "?")
