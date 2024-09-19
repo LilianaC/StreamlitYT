@@ -11,7 +11,7 @@ if "num" not in st.session_state:
     num = random.randint(0, len(df))
 
 if "puntos" not in st.session_state:
-    puntos = 0
+    st.session_state.puntos = 0
 
 elemento = df.iloc[st.session_state.num]['Elemento']
 symbol = df.iloc[st.session_state.num]['Symbol']
