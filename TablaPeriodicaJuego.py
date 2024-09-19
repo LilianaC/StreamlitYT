@@ -9,8 +9,6 @@ df = pd.read_csv(url)
 
 juego = st.button('🔄 Juego nuevo')
 
-if "num" not in st.session_state:
-    st.session_state.num = random.randint(0, len(df))
 
 if "puntos" not in st.session_state:
     st.session_state.puntos = 0
@@ -18,10 +16,12 @@ if "puntos" not in st.session_state:
 if "juego_state" not in st.session_state:
     st.session_state.juego_state = False
 
+num = random.randint(0, len(df))
+
 if juego or st.session_state.juego_state:
-    elemento = df.iloc[st.session_state.num]['Elemento']
-    symbol = df.iloc[st.session_state.num]['Symbol']
-    letra = df.iloc[st.session_state.num]['Elemento'][0]
+    elemento = df.iloc[num]['Elemento']
+    symbol = df.iloc[num]['Symbol']
+    letra = df.iloc[num]['Elemento'][0]
     pistas = df['Elemento'].loc[df['Elemento'].str.startswith(letra)]
     lista = pistas.values.tolist()
     lista.insert(0, "🤔")
