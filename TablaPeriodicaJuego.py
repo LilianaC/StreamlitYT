@@ -7,6 +7,8 @@ import random
 url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTyeAUixFkE9fiDDCx_Zifmngrjf1_9jjr1Tb7n1twPWiw0tfqd0atb1juO9ncpD5wDrjbBgcHqmfOy/pub?gid=435584327&single=true&output=csv'
 df = pd.read_csv(url)
 
+lista=[]
+
 juego = st.button('🔄 Juego nuevo')
 
 
