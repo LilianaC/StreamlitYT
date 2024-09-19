@@ -7,45 +7,30 @@ import random
 url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTyeAUixFkE9fiDDCx_Zifmngrjf1_9jjr1Tb7n1twPWiw0tfqd0atb1juO9ncpD5wDrjbBgcHqmfOy/pub?gid=435584327&single=true&output=csv'
 df = pd.read_csv(url)
 
-
-juego = st.button('🔄 Juego nuevo')
-
-if "juego_state" not in st.session_state:
-    st.session_state.juego_state = False
-
-
-if "lista" or "num" not in st.session_state:
+if "num" not in st.session_state:
     num = random.randint(0, len(df))
-    letra = df.iloc[num]['Elemento'][0]
-    resultado = df['Elemento'].loc[df['Elemento'].str.startswith(letra)]
-    lista = resultado.values.tolist()
-    lista.insert(0, "🤔")
-    st.session_state.lista = lista
-    st.session_state.num = num
 
-
-if juego or st.session_state.juego_state:
-    st.session_state.juego_state = True
+if "puntos" not in st.session_state:
     puntos = 0
-    num,lista = jugar()
-    st.write(num)
-    st.write("¿Cuál es el nombre del elemento químico con el símbolo", df.iloc[num]['Symbol'], "?")
-    st.write(num)
-    st.write(df.iloc[num]['Elemento'])
-    elemento = st.radio("Selecciona el elemento",lista)
-    st.write(num)
-    st.write(elemento)
 
-    
-    if elemento ==  df.iloc[num]['Elemento']:
-        st.write("¡Excelente!")
-        puntos += 1
-        st.write("Puntos",puntos)
-    
-    else:
-        st.write("Respuesta incorrecta")
-        puntos -= 1
-        st.write("Puntos",puntos)
+elemento = df.iloc[num]['Elemento']
+symbol = df.iloc[num]['Symbol']
+letra = df.iloc[num]['Elemento'][0]
+pistas = df['Elemento'].loc[df['Elemento'].str.startswith(letra)]
+lista = pistas.values.tolist()
+lista.insert(0, "🤔")
+
+st.write("¿Cuál es el nombre del elemento químico con el símbolo ",symbol, "?")
+respuesta = st.radio("Selecciona el elemento",lista)
+
+if respuesta ==  elemento:
+    st.write("¡Excelente!")
+    puntos += 1
+    st.write("Puntos",puntos)
+else:
+    st.write("Respuesta incorrecta")
+    puntos -= 1
+    st.write("Puntos",puntos)
     
     
 
