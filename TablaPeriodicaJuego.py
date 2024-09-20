@@ -32,10 +32,10 @@ if juego or st.session_state.juego_state:
     
     st.write("¿Cuál es el nombre del elemento químico con el símbolo ",symbol, "?")
     respuesta = st.radio("Selecciona el elemento",lista)#,index=None
-    st.write(respuesta)
-    st.write(lista)
-    st.write(elemento)
-    st.stop()
+    #st.write(respuesta)
+    #st.write(lista)
+    #st.write(elemento)
+    #st.stop()
     if respuesta ==  elemento:
         st.write("¡Excelente!")
         st.session_state.puntos += 1
