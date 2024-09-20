@@ -9,9 +9,7 @@ df = pd.read_csv(url)
 num = random.randint(0, len(df))
 
 def revisa():
-    
-    if respuesta ==  elemento:
-        
+    if respuesta == elemento:
         st.write("¡Excelente!")
         time.sleep(4)
     #st.rerun()
@@ -19,7 +17,6 @@ def revisa():
         st.write("Respuesta incorrecta")
         time.sleep(4)
     #st.rerun()
-
 
 elemento = df.iloc[num]['Elemento']
     
