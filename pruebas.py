@@ -1,7 +1,27 @@
 import streamlit as st
+import pandas as pd
+import random
 
-name = st.text_input("Name")
-if not name:
-  st.warning('Please input a name.')
-  st.stop()
-st.success("Thank you for inputting a name.")
+url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTyeAUixFkE9fiDDCx_Zifmngrjf1_9jjr1Tb7n1twPWiw0tfqd0atb1juO9ncpD5wDrjbBgcHqmfOy/pub?gid=435584327&single=true&output=csv'
+df = pd.read_csv(url)
+
+num = random.randint(0, len(df))
+elemento = df.iloc[num]['Elemento']
+    
+symbol = df.iloc[num]['Symbol']
+letra = df.iloc[num]['Elemento'][0]
+pistas = df['Elemento'].loc[df['Elemento'].str.startswith(letra)]
+    
+lista = pistas.values.tolist()
+lista.insert(0,"😁")
+    
+st.write("¿Cuál es el nombre del elemento químico con el símbolo ",symbol, "?")
+respuesta = st.radio("Selecciona el elemento",lista)#,index=None
+
+if respuesta ==  elemento:
+  st.write("¡Excelente!")
+  st.rerun()
+else:
+  st.write("Respuesta incorrecta")
+  st.rerun()
+  
