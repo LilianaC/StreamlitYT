@@ -19,6 +19,7 @@ lista.insert(0,"😁")
 st.write("¿Cuál es el nombre del elemento químico con el símbolo ",symbol, "?")
 respuesta = st.radio("Selecciona el elemento",lista,index=None)#,index=None
 #st.stop()
+time.sleep(4)
 
 if respuesta ==  elemento:
   st.write("¡Excelente!")
