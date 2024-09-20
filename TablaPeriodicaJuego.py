@@ -28,7 +28,7 @@ if juego or st.session_state.juego_state:
     pistas = df['Elemento'].loc[df['Elemento'].str.startswith(letra)]
     
     lista = pistas.values.tolist()
-    lista = lista.insert(0,"😁")
+    lista.insert(0,"😁")
     
     st.write("¿Cuál es el nombre del elemento químico con el símbolo ",symbol, "?")
     respuesta = st.radio("Selecciona el elemento",lista)
