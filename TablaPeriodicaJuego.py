@@ -11,7 +11,7 @@ df = pd.read_csv(url)
 
 juego = st.button('🔄 Juego nuevo')
 
-def revision(respuesta):
+def revision():
     if respuesta ==  elemento:
         st.write("¡Excelente!")
         st.session_state.puntos += 1
