@@ -11,12 +11,12 @@ num = random.randint(0, len(df))
 def revisa():
     
     if respuesta ==  elemento:
-    st.write("¡Excelente!")
-    time.sleep(4)
+        st.write("¡Excelente!")
+        time.sleep(4)
     #st.rerun()
     else:
-    st.write("Respuesta incorrecta")
-    time.sleep(4)
+        st.write("Respuesta incorrecta")
+        time.sleep(4)
     #st.rerun()
 
 
