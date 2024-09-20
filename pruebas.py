@@ -20,8 +20,8 @@ respuesta = st.radio("Selecciona el elemento",lista)#,index=None
 
 if respuesta ==  elemento:
   st.write("¡Excelente!")
-  st.rerun()
+  #st.rerun()
 else:
   st.write("Respuesta incorrecta")
-  st.rerun()
+  #st.rerun()
   
