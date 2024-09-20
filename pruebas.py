@@ -8,7 +8,7 @@ df = pd.read_csv(url)
 
 num = random.randint(0, len(df))
 
-def revisa():
+def revisa(respuesta,elemento):
     if respuesta == elemento:
         st.write("¡Excelente!")
         time.sleep(4)
