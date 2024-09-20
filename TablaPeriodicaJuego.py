@@ -11,6 +11,18 @@ df = pd.read_csv(url)
 
 juego = st.button('🔄 Juego nuevo')
 
+def revisión(respuesta,elemento):
+    if respuesta ==  elemento:
+        st.write("¡Excelente!")
+        st.session_state.puntos += 1
+        st.write("Puntos",st.session_state.puntos)
+    else:
+        st.write("Respuesta incorrecta")
+        st.session_state.puntos -= 1
+        st.write("Puntos",st.session_state.puntos)
+        st.write(respuesta)
+
+    
 
 if "puntos" not in st.session_state:
     st.session_state.puntos = 0
@@ -33,21 +45,12 @@ if juego or st.session_state.juego_state:
     lista = pistas.values.tolist()
     
     st.write("¿Cuál es el nombre del elemento químico con el símbolo ",symbol, "?")
-    respuesta = st.radio("Selecciona el elemento",lista,index=None)
+    respuesta = st.radio("Selecciona el elemento",lista,index=None,on_change=revision)
     st.write(respuesta)
     st.write(lista)
     st.write(elemento)
     
-    if respuesta ==  elemento:
-        st.write("¡Excelente!")
-        st.session_state.puntos += 1
-        st.write("Puntos",st.session_state.puntos)
-    else:
-        st.write("Respuesta incorrecta")
-        st.session_state.puntos -= 1
-        st.write("Puntos",st.session_state.puntos)
-        st.write(respuesta)
-
+    
     
 
 
