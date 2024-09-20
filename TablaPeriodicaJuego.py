@@ -35,15 +35,17 @@ if juego or st.session_state.juego_state:
     st.write(respuesta)
     st.write(lista)
     st.write(elemento)
-
+    st.stop
     if respuesta : #If it's NONE do not change the value.
         if respuesta ==  elemento:
            st.write("¡Excelente!")
            st.session_state.puntos += 1
            st.write("Puntos",st.session_state.puntos)
+           st.rerun
         else:
             st.write("Respuesta incorrecta")
             st.session_state.puntos -= 1
             st.write("Puntos",st.session_state.puntos)
             st.write(respuesta)
+            st.rerun
         #st.rerun() # Maybe to add to select the next one
