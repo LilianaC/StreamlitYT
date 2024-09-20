@@ -7,6 +7,19 @@ url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTyeAUixFkE9fiDDCx_Zifmng
 df = pd.read_csv(url)
 
 num = random.randint(0, len(df))
+
+def revisa():
+    
+    if respuesta ==  elemento:
+    st.write("¡Excelente!")
+    time.sleep(4)
+    #st.rerun()
+    else:
+    st.write("Respuesta incorrecta")
+    time.sleep(4)
+    #st.rerun()
+
+
 elemento = df.iloc[num]['Elemento']
     
 symbol = df.iloc[num]['Symbol']
@@ -17,16 +30,8 @@ lista = pistas.values.tolist()
 lista.insert(0,"😁")
     
 st.write("¿Cuál es el nombre del elemento químico con el símbolo ",symbol, "?")
-respuesta = st.radio("Selecciona el elemento",lista)#,index=None
+respuesta = st.radio("Selecciona el elemento",lista,on_change=revisa)#,index=None
 #st.stop()
 time.sleep(4)
 
-if respuesta ==  elemento:
-  st.write("¡Excelente!")
-  time.sleep(4)
-  #st.rerun()
-else:
-  st.write("Respuesta incorrecta")
-  time.sleep(4)
-  #st.rerun()
   
