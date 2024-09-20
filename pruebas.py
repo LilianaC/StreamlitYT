@@ -21,8 +21,8 @@ st.stop()
 
 if respuesta ==  elemento:
   st.write("¡Excelente!")
-  #st.rerun()
+  st.rerun()
 else:
   st.write("Respuesta incorrecta")
-  #st.rerun()
+  st.rerun()
   
