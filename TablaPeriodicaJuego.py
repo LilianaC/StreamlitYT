@@ -1,5 +1,3 @@
-#https://discuss.streamlit.io/t/dynamic-buttons/7723/2
-
 import streamlit as st
 import pandas as pd
 import random
@@ -37,36 +35,14 @@ if juego or st.session_state.juego_state:
     st.write(lista)
     st.write(elemento)
 
-    if respuesta ==  elemento:
-        
-        st.write("¡Excelente!")
-        st.session_state.puntos += 1
-        st.write("Puntos",st.session_state.puntos)
-    else:
-        st.write("Respuesta incorrecta")
-        st.session_state.puntos -= 1
-        st.write("Puntos",st.session_state.puntos)
-        st.write(respuesta)
-    
-    
-    
-
-
-
-
-
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
+    if respuesta : #If it's NONE do not change the value.
+        if respuesta ==  elemento:
+           st.write("¡Excelente!")
+           st.session_state.puntos += 1
+           st.write("Puntos",st.session_state.puntos)
+        else:
+            st.write("Respuesta incorrecta")
+            st.session_state.puntos -= 1
+            st.write("Puntos",st.session_state.puntos)
+            st.write(respuesta)
+        st.rerun() # Maybe to add to select the next one
