@@ -40,11 +40,11 @@ if juego or st.session_state.juego_state:
         st.write("¡Excelente!")
         st.session_state.puntos += 1
         st.write("Puntos",st.session_state.puntos)
-        st.rerun()
+        st.stop()
     else:
         st.write("Respuesta incorrecta")
         st.session_state.puntos -= 1
         st.write("Puntos",st.session_state.puntos)
         st.write(respuesta)
-        st.rerun()
+        st.stop()
         #st.rerun() # Maybe to add to select the next one
