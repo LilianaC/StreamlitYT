@@ -46,4 +46,4 @@ if juego or st.session_state.juego_state:
             st.session_state.puntos -= 1
             st.write("Puntos",st.session_state.puntos)
             st.write(respuesta)
-        st.rerun() # Maybe to add to select the next one
+        #st.rerun() # Maybe to add to select the next one
