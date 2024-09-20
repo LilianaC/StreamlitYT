@@ -36,6 +36,7 @@ if juego or st.session_state.juego_state:
     respuesta = st.radio("Selecciona el elemento",lista,index=None)
     st.write(respuesta)
     st.write(lista)
+    st.write(elemento)
     
     if respuesta ==  elemento:
         st.write("¡Excelente!")
