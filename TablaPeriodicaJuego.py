@@ -47,5 +47,5 @@ if selected_element:
         st.write("Incorrecto")
         st.session_state.correct = False
 
-if st.session_state.score > 5:
+if st.session_state.score == 5:
     st.balloons()
