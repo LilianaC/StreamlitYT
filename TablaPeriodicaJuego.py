@@ -28,6 +28,7 @@ selected_element = st.selectbox(
 if selected_element:
     # Get the correct symbol for the selected element
     correct_element = df.iloc[st.session_state.num]['Elemento']
+    st.write(correct_element)
 
     # Check if the selected symbol is correct
     if selected_element == correct_element:
