@@ -32,11 +32,13 @@ selected_element = st.selectbox(
 
 if selected_element:
     if selected_element == correct_element:
-        st.success("Correct!")
+        #st.success("Correct!")
+        st.write("Muy bien")
         st.session_state.correct = True
         
     else:
-        st.error("Incorrect!")
+        st.write("Incorrecto)
+        #st.error("Incorrect!")
 
 #if st.session_state.correct:
     #st.rerun()
