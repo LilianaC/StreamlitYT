@@ -32,6 +32,7 @@ if selected_symbol:
     if selected_symbol == correct_symbol:
         st.write('Correct! The symbol for', st.session_state.element, 'is', correct_symbol)
         st.session_state.correct = True
+        st.experimental_rerun() # Rerun the script to ask for another element
     else:
         st.write('Incorrect. The symbol for', st.session_state.element, 'is', correct_symbol)
         st.session_state.correct = False
