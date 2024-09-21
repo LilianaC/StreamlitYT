@@ -50,4 +50,4 @@ if selected_element:
 
 if st.button("🫡 Comenzar de nuevo"):
     st.session_state.correct = True
-    st.rerun()
+    #st.rerun()
