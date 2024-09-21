@@ -22,6 +22,7 @@ if 'simbolo' not in st.session_state:
 if st.session_state.correct:
     st.session_state.num = random.randint(0, 118)
     st.session_state.elemento = df.iloc[st.session_state.num]['Elemento']
+    st.session_state.simbolo = df.iloc[st.session_state.num]['Symbol']
 
 
 letra = st.session_state.elemento[0]
