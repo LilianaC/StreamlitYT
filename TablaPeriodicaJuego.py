@@ -43,7 +43,7 @@ if selected_element:
     if selected_element == correct_element:
         st.write('Correct! The symbol for', st.session_state.elemento, 'is', correct_element)
         st.session_state.correct = True
-        st.rerun() # Rerun the script to ask for another element
+        #st.rerun() # Rerun the script to ask for another element
     else:
         st.write('Incorrect. The symbol for', st.session_state.elemento, 'is', correct_element)
         st.session_state.correct = False
