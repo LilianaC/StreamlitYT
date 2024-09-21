@@ -33,6 +33,7 @@ selected_element = st.selectbox(
 if selected_element:
     if selected_element == correct_element:
         st.success("Correct!")
+        st.rerun()
     else:
         st.error("Incorrect!")
         
