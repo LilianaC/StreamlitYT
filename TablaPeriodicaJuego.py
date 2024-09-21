@@ -22,34 +22,23 @@ if 'simbolo' not in st.session_state:
 if "score" not in st.session_state:
     st.session_state.score = 0
 
-#if st.session_state.correct:
-    #st.rerun()
-    #st.session_state.num = random.randint(0, 118)
-    #st.session_state.simbolo = df.iloc[st.session_state.num]['Symbol']
-    #st.session_state.elemento = df.iloc[st.session_state.num]['Elemento']
-
-
 letra = st.session_state.elemento[0]
 resultado = df['Elemento'].loc[df['Elemento'].str.startswith(letra)]
 lista = resultado.values.tolist()
-# Ask the user to select the symbol for the randomly selected element
 correct_element = st.session_state.elemento
 
 selected_element = st.selectbox(
     f'🤔 ¿Cuál es el elemento para {st.session_state.simbolo}?',
-    [''] + lista,key="respuesta") # Here we are using the 'Symbol' column of the dataframe as the options for the selectbox
+    [''] + lista) # Here we are using the 'Symbol' column of the dataframe as the options for the selectbox
 
 if selected_element:
-#if st.session_state["respuesta"]:
-    #if st.session_state["respuesta"] == correct_element:
+
     if selected_element == correct_element:
-        #st.success("Correct!")
         st.write("Muy bien")
-        #time.sleep(3)
         st.session_state.score += 1
         st.write(f"Hasta ahorita llevamos {st.session_state.score} puntos")
         st.session_state.correct = True
-        #st.rerun()
+
         st.session_state.num = random.randint(0, 118)
         st.session_state.simbolo = df.iloc[st.session_state.num]['Symbol']
         st.session_state.elemento = df.iloc[st.session_state.num]['Elemento']
@@ -57,16 +46,3 @@ if selected_element:
     else:
         st.write("Incorrecto")
         st.session_state.correct = False
-        #st.error("Incorrect!")
-
-
-
-
-
-#if st.session_state.correct:
-    #st.session_state.num = random.randint(0, 118)
-    #st.session_state.simbolo = df.iloc[st.session_state.num]['Symbol']
-    #st.session_state.elemento = df.iloc[st.session_state.num]['Elemento']
-#if st.button("🫡 Comenzar de nuevo"):
-#    st.session_state.correct = True
-#    st.rerun()
