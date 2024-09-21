@@ -36,10 +36,10 @@ if selected_element:
     if selected_element == correct_element:
         #st.success("Correct!")
         st.write("Muy bien")
-        time.sleep(3)
+        #time.sleep(3)
         
         st.session_state.correct = True
-        st.rerun()
+        #st.rerun()
         
     else:
         st.write("Incorrecto")
