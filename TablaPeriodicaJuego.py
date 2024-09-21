@@ -19,6 +19,9 @@ if 'elemento' not in st.session_state:
 if 'simbolo' not in st.session_state:
     st.session_state.simbolo = df.iloc[st.session_state.num]['Symbol']
 
+if "score" not in st.session_state:
+    st.session_state.score = 0
+
 #if st.session_state.correct:
     #st.rerun()
     #st.session_state.num = random.randint(0, 118)
@@ -43,7 +46,8 @@ if selected_element:
         #st.success("Correct!")
         st.write("Muy bien")
         #time.sleep(3)
-        
+        st.session_state.score += 1
+        st.write(f"Hasta ahorita llevamos {st.session_state.score} puntos")
         st.session_state.correct = True
         #st.rerun()
         st.session_state.num = random.randint(0, 118)
