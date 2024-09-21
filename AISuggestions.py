@@ -14,13 +14,15 @@ element = np.random.choice(df['Element'])
 # Ask the user to select the symbol for the randomly selected element
 selected_symbol = st.selectbox(
     f'What is the symbol for {element}?',
-    df['Symbol']) # Here we are using the 'Symbol' column of the dataframe as the options for the selectbox
+    [''] + list(df['Symbol'])) # Here we are using the 'Symbol' column of the dataframe as the options for the selectbox
 
-# Get the correct symbol for the selected element
-correct_symbol = df[df['Element'] == element]['Symbol'].values[0]
+# If a symbol is selected, check if it is correct and display a message
+if selected_symbol:
+    # Get the correct symbol for the selected element
+    correct_symbol = df[df['Element'] == element]['Symbol'].values[0]
 
-# Check if the selected symbol is correct and display a message
-if selected_symbol == correct_symbol:
-    st.write('Correct! The symbol for', element, 'is', correct_symbol)
-else:
-    st.write('Incorrect. The symbol for', element, 'is', correct_symbol)
+    # Check if the selected symbol is correct
+    if selected_symbol == correct_symbol:
+        st.write('Correct! The symbol for', element, 'is', correct_symbol)
+    else:
+        st.write('Incorrect. The symbol for', element, 'is', correct_symbol)
