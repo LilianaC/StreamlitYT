@@ -37,8 +37,8 @@ if selected_element:
     # Check if the selected symbol is correct
     if selected_element == correct_element:
         st.write('Correct! The symbol for', st.session_state.elemento, 'is', correct_element)
-        st.session_state.num = random.randint(0, 118)
-        st.session_state.elemento = df.iloc[st.session_state.num]['Elemento']
+        #st.session_state.num = random.randint(0, 118)
+        #st.session_state.elemento = df.iloc[st.session_state.num]['Elemento']
         st.session_state.correct = True
         #st.rerun() # Rerun the script to ask for another element
     else:
