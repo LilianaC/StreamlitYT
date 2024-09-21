@@ -8,31 +8,26 @@ df = pd.DataFrame({
     'Symbol': ['H', 'He', 'Li', 'Be', 'B']
 })
 
-# Initialize session state
-if 'correct' not in st.session_state:
-    st.session_state.correct = True
-if 'element' not in st.session_state:
-    st.session_state.element = np.random.choice(df['Element'])
+random_index = np.random.randint(len(df))
+element, correct_symbol = df.iloc[random_index]["Element"], df.iloc[random_index]["Symbol"]
 
-# If the previous answer was correct, randomly select a new element
-if st.session_state.correct:
-    st.session_state.element = np.random.choice(df['Element'])
+user_symbol = st.selectbox("Select the correct symbol for this element:", df["Symbol"].values)
 
-# Ask the user to select the symbol for the randomly selected element
-selected_symbol = st.selectbox(
-    f'What is the symbol for {st.session_state.element}?',
-    [''] + list(df['Symbol'])) # Here we are using the 'Symbol' column of the dataframe as the options for the selectbox
+if user_symbol == correct_symbol:
+    st.success("Correct!")
+else:
+    st.error("Incorrect!")
 
-# If a symbol is selected, check if it is correct and display a message
-if selected_symbol:
-    # Get the correct symbol for the selected element
-    correct_symbol = df[df['Element'] == st.session_state.element]['Symbol'].values[0]
+if "score" not in st.session_state:
+    st.session_state.score = 0
 
-    # Check if the selected symbol is correct
-    if selected_symbol == correct_symbol:
-        st.write('Correct! The symbol for', st.session_state.element, 'is', correct_symbol)
-        st.session_state.correct = True
-        st.rerun() # Rerun the script to ask for another element
-    else:
-        st.write('Incorrect. The symbol for', st.session_state.element, 'is', correct_symbol)
-        st.session_state.correct = False
+if user_symbol == correct_symbol:
+    st.session_state.score += 1
+    st.experimental_rerun()
+
+else:
+    st.write(f"Game over! Your final score is {st.session_state.score}.")
+
+if st.button("Start a new game"):
+    st.session_state.score = 0
+    st.experimental_rerun()
