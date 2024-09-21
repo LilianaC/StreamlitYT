@@ -17,7 +17,7 @@ if st.session_state.correct:
     st.session_state.num = random.randint(0, len(df))
     st.session_state.Symbol = df.iloc[st.session_state.num]['Symbol']
 
-letra = df.iloc[num]['Elemento'][0]
+letra = df.iloc[st.session_state.num]['Elemento'][0]
 resultado = df['Elemento'].loc[df['Elemento'].str.startswith(letra)]
 lista = resultado.values.tolist()
 # Ask the user to select the symbol for the randomly selected element
