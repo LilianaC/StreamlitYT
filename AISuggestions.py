@@ -1,20 +1,26 @@
 import streamlit as st
+import pandas as pd
+import numpy as np
 
-def on_select_change():
-    # Your conditional logic here
-    if st.session_state.selected_option == "Option1":
-        st.write("You selected Option1.")
-    else:
-        st.write("You selected a different option.")
+# Create a pandas DataFrame with chemical elements and their symbols
+df = pd.DataFrame({
+    'Element': ['Hydrogen', 'Helium', 'Lithium', 'Beryllium', 'Boron'],
+    'Symbol': ['H', 'He', 'Li', 'Be', 'B']
+})
 
-# Initialize session state
-if "selected_option" not in st.session_state:
-    st.session_state.selected_option = "Option1"
+# Randomly select an element
+element = np.random.choice(df['Element'])
 
-# Create selectbox with session state and on_change parameter
-selected_option = st.selectbox(
-    "Select an option",
-    ("Option1", "Option2", "Option3"),
-    key="selected_option",  # Use session state key
-    on_change=on_select_change
-)
+# Ask the user to select the symbol for the randomly selected element
+selected_symbol = st.selectbox(
+    f'What is the symbol for {element}?',
+    df['Symbol']) # Here we are using the 'Symbol' column of the dataframe as the options for the selectbox
+
+# Get the correct symbol for the selected element
+correct_symbol = df[df['Element'] == element]['Symbol'].values[0]
+
+# Check if the selected symbol is correct and display a message
+if selected_symbol == correct_symbol:
+    st.write('Correct! The symbol for', element, 'is', correct_symbol)
+else:
+    st.write('Incorrect. The symbol for', element, 'is', correct_symbol)
