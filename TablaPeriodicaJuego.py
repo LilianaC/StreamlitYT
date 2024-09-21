@@ -18,7 +18,7 @@ if 'simbolo' not in st.session_state:
 # If the previous answer was correct, randomly select a new element
 if st.session_state.correct:
     st.session_state.num = random.randint(0, 118)
-    #st.session_state.Symbol = df.iloc[st.session_state.num]['Symbol']
+    st.session_state.Symbol = df.iloc[st.session_state.num]['Symbol']
 
 letra = st.session_state.elemento[0]
 resultado = df['Elemento'].loc[df['Elemento'].str.startswith(letra)]
