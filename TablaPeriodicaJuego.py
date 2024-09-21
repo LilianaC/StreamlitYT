@@ -47,3 +47,6 @@ if selected_element:
     else:
         st.write('Incorrect. The symbol for', st.session_state.elemento, 'is', correct_element)
         st.session_state.correct = False
+
+if st.button("🫡 Comenzar de nuevo"):
+    st.rerun()
