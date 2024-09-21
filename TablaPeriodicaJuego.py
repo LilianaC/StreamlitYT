@@ -37,7 +37,8 @@ if selected_element:
         st.session_state.correct = True
         
     else:
-        st.write("Incorrecto)
+        st.write("Incorrecto")
+         st.session_state.correct = False
         #st.error("Incorrect!")
 
 #if st.session_state.correct:
