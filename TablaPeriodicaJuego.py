@@ -30,7 +30,7 @@ if selected_element:
     correct_element = df.iloc[st.session_state.num]['Elemento']
 
     # Check if the selected symbol is correct
-    if selected_symbol == correct_element:
+    if selected_element == correct_element:
         st.write('Correct! The symbol for', st.session_state.element, 'is', correct_symbol)
         st.session_state.correct = True
         st.rerun() # Rerun the script to ask for another element
