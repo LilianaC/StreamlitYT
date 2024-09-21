@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import random
+import time
 
 url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTyeAUixFkE9fiDDCx_Zifmngrjf1_9jjr1Tb7n1twPWiw0tfqd0atb1juO9ncpD5wDrjbBgcHqmfOy/pub?gid=435584327&single=true&output=csv'
 df = pd.read_csv(url)
@@ -35,8 +36,10 @@ if selected_element:
     if selected_element == correct_element:
         #st.success("Correct!")
         st.write("Muy bien")
-        st.session_state.correct = True
+        time.sleep(3)
         
+        st.session_state.correct = True
+        st.rerun()
         
     else:
         st.write("Incorrecto")
