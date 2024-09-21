@@ -23,11 +23,11 @@ if "score" not in st.session_state:
 
 if user_symbol == correct_symbol:
     st.session_state.score += 1
-    st.experimental_rerun()
+    st.rerun()
 
 else:
     st.write(f"Game over! Your final score is {st.session_state.score}.")
 
 if st.button("Start a new game"):
     st.session_state.score = 0
-    st.experimental_rerun()
+    st.rerun()
