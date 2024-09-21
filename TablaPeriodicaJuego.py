@@ -34,10 +34,11 @@ selected_element = st.selectbox(
     f'🤔 ¿Cuál es el elemento para {st.session_state.simbolo}?',
     [''] + lista) # Here we are using the 'Symbol' column of the dataframe as the options for the selectbox
 
-if selected_element == correct_element:
-    st.success("Correct!")
-else:
-    st.error("Incorrect!")
+if selected_element:
+    if selected_element == correct_element:
+        st.success("Correct!")
+    else:
+        st.error("Incorrect!")
         
         
 #if st.button("🫡 Comenzar de nuevo"):
