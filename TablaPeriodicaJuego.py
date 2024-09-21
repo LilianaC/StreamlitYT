@@ -19,6 +19,12 @@ if 'elemento' not in st.session_state:
 if 'simbolo' not in st.session_state:
     st.session_state.simbolo = df.iloc[st.session_state.num]['Symbol']
 
+if st.session_state.correct:
+    #st.rerun()
+    st.session_state.num = random.randint(0, 118)
+    st.session_state.simbolo = df.iloc[st.session_state.num]['Symbol']
+    st.session_state.elemento = df.iloc[st.session_state.num]['Elemento']
+
 
 letra = st.session_state.elemento[0]
 resultado = df['Elemento'].loc[df['Elemento'].str.startswith(letra)]
@@ -47,11 +53,7 @@ if selected_element:
         #st.error("Incorrect!")
 
 
-if st.session_state.correct:
-    #st.rerun()
-    st.session_state.num = random.randint(0, 118)
-    #st.session_state.simbolo = df.iloc[st.session_state.num]['Symbol']
-    #st.session_state.elemento = df.iloc[st.session_state.num]['Elemento']
+
 
 
 #if st.session_state.correct:
