@@ -33,10 +33,17 @@ selected_element = st.selectbox(
 if selected_element:
     if selected_element == correct_element:
         st.success("Correct!")
-        st.rerun()
+        st.session_state.correct = True
+        
     else:
         st.error("Incorrect!")
-        
+
+if st.session_state.correct:
+    st.session_state.num = random.randint(0, 118)
+    st.session_state.simbolo = df.iloc[st.session_state.num]['Symbol']
+    st.session_state.elemento = df.iloc[st.session_state.num]['Elemento']
+
+
 #if st.session_state.correct:
     #st.session_state.num = random.randint(0, 118)
     #st.session_state.simbolo = df.iloc[st.session_state.num]['Symbol']
