@@ -35,12 +35,13 @@ if selected_element:
         #st.success("Correct!")
         st.write("Muy bien")
         st.session_state.correct = True
-        st.rerun()
+        
         
     else:
         st.write("Incorrecto")
         st.session_state.correct = False
         #st.error("Incorrect!")
+st.rerun()
 
 #if st.session_state.correct:
     #st.rerun()
