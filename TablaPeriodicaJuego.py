@@ -7,7 +7,7 @@ import time
 custom_css = """
 <style>
 [data-baseweb="select"] > div {
-    font-size: 20px;
+    font-size: 30px;
     color: white;
     background-color: dodgerblue;
 }
