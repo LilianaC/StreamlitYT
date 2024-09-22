@@ -31,6 +31,11 @@ selected_element = st.selectbox(
     f'🤔 ¿Cuál es el elemento para {st.session_state.simbolo}?',
     [''] + lista) # Here we are using the 'Symbol' column of the dataframe as the options for the selectbox
 
+st.write("Algunas características de este elemento son:")
+st.write(df.iloc[st.session_state.num]['Fase'])
+st.write(df.iloc[st.session_state.num]['Clasifica'])
+st.write(df.iloc[st.session_state.num]['Año'])
+
 if selected_element:
 
     if selected_element == correct_element:
