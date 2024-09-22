@@ -35,7 +35,8 @@ selected_element = st.selectbox(
 
 st.write("Algunas características de este elemento son:")
 st.write(f"El númerol atómico es: {int(df.iloc[st.session_state.num]['AtomicNumber'])}")
-st.write(df.iloc[st.session_state.num]['Fase'], df.iloc[st.session_state.num]['Clasifica'], df.iloc[st.session_state.num]['Apariencia'])
+st.write(df.iloc[st.session_state.num]['Fase'], df.iloc[st.session_state.num]['Clasifica'])
+st.write(df.iloc[st.session_state.num]['Apariencia'])
 st.write(f"Se descubrió en:  {int(df.iloc[st.session_state.num]['Año'])}")
 
 if selected_element:
