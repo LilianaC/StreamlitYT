@@ -45,6 +45,7 @@ if selected_element:
         
     else:
         st.write("🫣 Incorrecto")
+        st.write(f"🫢 El elemento es {st.session_state.elemento} ")
         st.session_state.correct = False
 
 if st.session_state.score == 5:
