@@ -34,6 +34,7 @@ selected_element = st.selectbox(
     [''] + lista) # Here we are using the 'Symbol' column of the dataframe as the options for the selectbox
 
 st.write("Algunas características de este elemento son:")
+st.write(f"El númerol atómico es: {int(df.iloc[st.session_state.num]['AtomicNumber'])}")
 st.write(df.iloc[st.session_state.num]['Fase'])
 st.write(df.iloc[st.session_state.num]['Clasifica'])
 st.write(f"Se descubrió en:  {int(df.iloc[st.session_state.num]['Año'])}")
