@@ -35,6 +35,7 @@ st.write("Algunas características de este elemento son:")
 st.write(df.iloc[st.session_state.num]['Fase'])
 st.write(df.iloc[st.session_state.num]['Clasifica'])
 st.write(f"Se descubrió en:  {int(df.iloc[st.session_state.num]['Año'])}")
+st.write(df.iloc[st.session_state.num]['Apariencia'])
 
 if selected_element:
 
