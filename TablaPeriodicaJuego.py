@@ -31,6 +31,9 @@ resultado = df['Elemento'].loc[df['Elemento'].str.startswith(letra)]
 lista = resultado.values.tolist()
 correct_element = st.session_state.elemento
 
+st.title(:blue["Símbolos de los elementos químicos 🧪"])
+
+
 selected_element = st.selectbox(
     f'🤔 ¿Cuál es el elemento para {st.session_state.simbolo}?',
     [''] + lista) # Here we are using the 'Symbol' column of the dataframe as the options for the selectbox
