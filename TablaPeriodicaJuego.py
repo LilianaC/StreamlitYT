@@ -4,14 +4,6 @@ import numpy as np
 import random
 import time
 
-st.markdown("""
-<style>
-.streamlit-selectbox {
- font-size: 30px;
- font-family: 'Arial';
-}
-</style>
-""", unsafe_allow_html=True)
 
 
 url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTyeAUixFkE9fiDDCx_Zifmngrjf1_9jjr1Tb7n1twPWiw0tfqd0atb1juO9ncpD5wDrjbBgcHqmfOy/pub?gid=435584327&single=true&output=csv'
@@ -41,18 +33,18 @@ resultado = df['Elemento'].loc[df['Elemento'].str.startswith(letra)]
 lista = resultado.values.tolist()
 correct_element = st.session_state.elemento
 
-st.title("🧪:blue[Símbolos de elementos químicos]")
+st.header("🧪:blue[Símbolos de elementos químicos]")
 
 
 selected_element = st.selectbox(
     f'🤔 ¿Cuál es el elemento para {st.session_state.simbolo}?',
     [''] + lista) # Here we are using the 'Symbol' column of the dataframe as the options for the selectbox
 
-st.write("Algunas características de este elemento son:")
-st.write(f"El númerol atómico es: {int(df.iloc[st.session_state.num]['AtomicNumber'])}")
-st.write(df.iloc[st.session_state.num]['Fase'], df.iloc[st.session_state.num]['Clasifica'])
-st.write(df.iloc[st.session_state.num]['Apariencia'])
-st.write(f"Se descubrió en:  {int(df.iloc[st.session_state.num]['Año'])}")
+st.subheader("Algunas características de este elemento son:")
+st.subheader(f"El :green[númerol atómico] es: {int(df.iloc[st.session_state.num]['AtomicNumber'])}")
+st.header(df.iloc[st.session_state.num]['Fase'], df.iloc[st.session_state.num]['Clasifica'])
+st.header(df.iloc[st.session_state.num]['Apariencia'])
+st.header(f"El año de descubrimiento 🕵🏻:  {int(df.iloc[st.session_state.num]['Año'])}")
 
 if selected_element:
 
