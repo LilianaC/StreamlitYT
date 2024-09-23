@@ -67,4 +67,4 @@ if st.session_state.score == 5:
 
 if st.session_state.score == 5:
     st.balloons()
-st.image("español_ptable.png",caption="Tabla periódica en Español",use_column_width="never")
+st.image("español_ptable.png",caption="Tabla periódica en Español",width=200)
