@@ -7,7 +7,7 @@ import time
 # Custom CSS to inject
 style = """
 <style>
-    .stSelectbox > div {font-size: 30px;}
+    .stSelectbox > div {font-size: 20px;}
 </style>
 """
 st.markdown(style, unsafe_allow_html=True)
