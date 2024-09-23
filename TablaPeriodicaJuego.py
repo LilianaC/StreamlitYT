@@ -46,7 +46,7 @@ if selected_element:
     if selected_element == correct_element:
         st.header("😁 Muy bien")
         st.session_state.score += 1
-        st.write(f"🤓 Hasta ahorita llevamos {st.session_state.score} puntos")
+        st.header(f"🤓 Hasta ahorita llevamos {st.session_state.score} puntos")
         st.session_state.correct = True
 
         st.session_state.num = random.randint(0, 118)
