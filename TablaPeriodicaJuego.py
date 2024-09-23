@@ -50,7 +50,7 @@ st.subheader(":violet[Algunas características de este elemento son:]",divider='
 st.subheader(f"El :green[número atómico] es: {int(df.iloc[st.session_state.num]['AtomicNumber'])}")
 st.subheader(df.iloc[st.session_state.num]['Fase'], df.iloc[st.session_state.num]['Clasifica'])
 st.subheader(df.iloc[st.session_state.num]['Apariencia'])
-st.subheader(f"El año de descubrimiento 🕵🏻:  {int(df.iloc[st.session_state.num]['Año'])}",divider='orange')
+st.subheader(f"El año de :green[descubrimiento] 🕵🏻:  {int(df.iloc[st.session_state.num]['Año'])}",divider='orange')
 
 if selected_element:
 
@@ -65,17 +65,18 @@ if selected_element:
         st.session_state.elemento = df.iloc[st.session_state.num]['Elemento']
         
     else:
-        st.header("🫣 Incorrecto")
-        st.write(f"🫢 El elemento es {st.session_state.elemento} ")
+        st.subheader("🫣 Incorrecto")
+        st.subheader(f"🫢 El elemento es {st.session_state.elemento} ")
         st.session_state.score -= 1
         st.session_state.correct = False
 
 if st.session_state.score == 3:
-    st.header("Sí se puede 🪇", anchor=None, divider="red")
+    st.subheader("Sí se puede 🪇", anchor=None, divider="red")
 
 if st.session_state.score == 5:
     st.balloons()
 
 if st.session_state.score == 5:
     st.balloons()
+    
 st.image("español_ptable.png",caption="Tabla periódica en Español (Ptable)",width=200)
