@@ -4,16 +4,13 @@ import numpy as np
 import random
 import time
 
-# Custom CSS to inject larger font size for selectbox
-tabs_font_css = """
+# Custom CSS to inject
+style = """
 <style>
-div[class*=".stSelectbox"] {
-  font-size: 35px;
-  color: red;
-}
+    .stSelectbox > div {font-size: 30px;}
 </style>
 """
-st.markdown(tabs_font_css, unsafe_allow_html=True)
+st.markdown(style, unsafe_allow_html=True)
 
 url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTyeAUixFkE9fiDDCx_Zifmngrjf1_9jjr1Tb7n1twPWiw0tfqd0atb1juO9ncpD5wDrjbBgcHqmfOy/pub?gid=435584327&single=true&output=csv'
 df = pd.read_csv(url)
