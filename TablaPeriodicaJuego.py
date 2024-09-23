@@ -54,13 +54,13 @@ if selected_element:
         st.session_state.elemento = df.iloc[st.session_state.num]['Elemento']
         
     else:
-        st.write("🫣 Incorrecto")
+        st.header("🫣 Incorrecto")
         st.write(f"🫢 El elemento es {st.session_state.elemento} ")
         st.session_state.score -= 1
         st.session_state.correct = False
 
 if st.session_state.score == 3:
-    st.subheader("Sí se puede 🪇", divider="red")
+    st.subheader("Sí se puede 🪇", anchor=None, divider="red")
 
 if st.session_state.score == 5:
     st.balloons()
