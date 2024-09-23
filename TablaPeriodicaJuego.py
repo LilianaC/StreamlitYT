@@ -44,9 +44,9 @@ st.write(f"Se descubrió en:  {int(df.iloc[st.session_state.num]['Año'])}")
 if selected_element:
 
     if selected_element == correct_element:
-        st.header("😁 Muy bien")
+        st.subheader("😁 Muy bien")
         st.session_state.score += 1
-        st.header(f"🤓 Hasta ahorita llevamos {st.session_state.score} puntos")
+        st.subheader(f"🤓 Hasta ahorita llevamos {st.session_state.score} puntos")
         st.session_state.correct = True
 
         st.session_state.num = random.randint(0, 118)
@@ -60,7 +60,7 @@ if selected_element:
         st.session_state.correct = False
 
 if st.session_state.score == 3:
-    st.subheader("Sí se puede 🪇", anchor=None, divider="red")
+    st.header("Sí se puede 🪇", anchor=None, divider="red")
 
 if st.session_state.score == 5:
     st.balloons()
