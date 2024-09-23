@@ -31,7 +31,7 @@ resultado = df['Elemento'].loc[df['Elemento'].str.startswith(letra)]
 lista = resultado.values.tolist()
 correct_element = st.session_state.elemento
 
-st.title(":blue[Símbolos de elementos químicos🧪]")
+st.title(":blue[Símbolos de elementos químicos]🧪")
 
 
 selected_element = st.selectbox(
