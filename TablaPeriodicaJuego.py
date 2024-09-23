@@ -8,7 +8,7 @@ import time
 tabs_font_css = """
 <style>
 div[class*="stSelectbox"] label {
-  font-size: 26px;
+  font-size: 35px;
   color: red;
 }
 </style>
