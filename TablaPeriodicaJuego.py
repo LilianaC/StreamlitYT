@@ -4,15 +4,14 @@ import numpy as np
 import random
 import time
 
-# Custom CSS to inject
-style = """
+st.markdown("""
 <style>
-    .stSelectbox > div > div > select {
-        font-size:35 px;
-    }
+.streamlit-selectbox {
+ font-size: 30px;
+ font-family: 'Arial';
+}
 </style>
-"""
-st.markdown(style, unsafe_allow_html=True)
+""", unsafe_allow_html=True)
 
 
 url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTyeAUixFkE9fiDDCx_Zifmngrjf1_9jjr1Tb7n1twPWiw0tfqd0atb1juO9ncpD5wDrjbBgcHqmfOy/pub?gid=435584327&single=true&output=csv'
