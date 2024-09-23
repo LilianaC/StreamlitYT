@@ -8,7 +8,7 @@ import time
 style = """
 <style>
     .stSelectbox > div {font-size: 20px;}
-    label {font-size: 26px;
+    .stSelectbox > label {font-size: 26px;
      color: red;}
 </style>
 """
