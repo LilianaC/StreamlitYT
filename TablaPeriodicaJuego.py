@@ -7,7 +7,7 @@ import time
 # Custom CSS to inject larger font size for selectbox
 tabs_font_css = """
 <style>
-div[class*="stSelectbox"] {
+div[class*=".stSelectbox"] {
   font-size: 35px;
   color: red;
 }
