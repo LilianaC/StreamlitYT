@@ -58,5 +58,8 @@ if selected_element:
         st.write(f"🫢 El elemento es {st.session_state.elemento} ")
         st.session_state.correct = False
 
+if st.session_state.score == 3:
+    st.write("Sí se puede 🪇")
+
 if st.session_state.score == 5:
     st.balloons()
