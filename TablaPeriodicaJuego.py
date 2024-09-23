@@ -8,6 +8,9 @@ import time
 style = """
 <style>
     .stSelectbox > div {font-size: 20px;}
+    label {font-size: 26px;
+     color: red;
+}
 </style>
 """
 st.markdown(style, unsafe_allow_html=True)
