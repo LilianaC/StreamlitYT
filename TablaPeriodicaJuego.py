@@ -46,7 +46,7 @@ selected_element = st.selectbox(
     f'🤔 ¿Cuál es el elemento para {st.session_state.simbolo}?',
     [''] + lista) # Here we are using the 'Symbol' column of the dataframe as the options for the selectbox
 
-st.subheader(":violet[Algunas características de este elemento son:]")
+st.subheader(":violet[Algunas características de este elemento son:]",,divider='orange')
 st.subheader(f"El :green[número atómico] es: {int(df.iloc[st.session_state.num]['AtomicNumber'])}")
 st.subheader(df.iloc[st.session_state.num]['Fase'], df.iloc[st.session_state.num]['Clasifica'])
 st.subheader(df.iloc[st.session_state.num]['Apariencia'])
