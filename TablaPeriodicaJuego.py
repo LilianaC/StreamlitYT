@@ -44,7 +44,7 @@ st.write(f"Se descubrió en:  {int(df.iloc[st.session_state.num]['Año'])}")
 if selected_element:
 
     if selected_element == correct_element:
-        st.write("😁 Muy bien")
+        st.header("😁 Muy bien")
         st.session_state.score += 1
         st.write(f"🤓 Hasta ahorita llevamos {st.session_state.score} puntos")
         st.session_state.correct = True
