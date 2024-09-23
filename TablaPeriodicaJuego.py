@@ -60,7 +60,10 @@ if selected_element:
         st.session_state.correct = False
 
 if st.session_state.score == 3:
-    st.write("Sí se puede 🪇")
+    st.subheader("Sí se puede 🪇", divider="red")
+
+if st.session_state.score == 5:
+    st.balloons()
 
 if st.session_state.score == 5:
     st.balloons()
