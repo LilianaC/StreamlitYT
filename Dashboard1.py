@@ -11,3 +11,16 @@ def set_page_config():
         initial_sidebar_state="expanded",
     )
     st.markdown("<style> footer {visibility: hidden;} </style>", unsafe_allow_html=True)
+
+
+def main():
+    set_page_config()
+
+    st.title("📊 Sales Dashboard")
+
+    selected_product_lines, selected_countries, selected_statuses = display_sidebar(data)
+
+
+
+if __name__ == '__main__':
+    main()
