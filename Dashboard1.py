@@ -1,26 +1,13 @@
-import pandas as pd
-import plotly.express as px
 import streamlit as st
 
+# Add a selectbox to the sidebar:
+add_selectbox = st.sidebar.selectbox(
+    'How would you like to be contacted?',
+    ('Email', 'Home phone', 'Mobile phone')
+)
 
-def set_page_config():
-    st.set_page_config(
-        page_title="Métricas de asistencia",
-        page_icon=":bar_chart:",
-        layout="wide",
-        initial_sidebar_state="expanded",
-    )
-    st.markdown("<style> footer {visibility: hidden;} </style>", unsafe_allow_html=True)
-
-
-def main():
-    set_page_config()
-
-    st.title("📊 Sales Dashboard")
-
-    selected_product_lines, selected_countries, selected_statuses = display_sidebar(data)
-
-
-
-if __name__ == '__main__':
-    main()
+# Add a slider to the sidebar:
+add_slider = st.sidebar.slider(
+    'Select a range of values',
+    0.0, 100.0, (25.0, 75.0)
+)
