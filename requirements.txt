@@ -1,10 +1,5 @@
 #streamlit==1.22.0
 streamlit==1.36.0
-polars==0.17.10
 pandas==1.5.3
 plotly==5.9.0
-pillow==9.3.0
-datetime==5.1
 numpy==1.26.4
-utils == 1.0.2
-lxml
